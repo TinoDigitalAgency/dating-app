@@ -1,0 +1,90 @@
+{
+    "env": {
+        "react-native/react-native": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "react-native",
+        "@typescript-eslint",
+        "import"
+    ],
+    "rules": {
+        "react-native/no-unused-styles": 2,
+        "import/no-unresolved": "error",
+        "react-native/split-platform-components": 2,
+        "react-native/no-color-literals": 2,
+        "react-native/no-single-element-style-arrays": 2,
+        "indent": [
+            "error",
+            2
+        ],
+        "react/jsx-indent": [
+            "error",
+            2
+        ],
+        "react/jsx-indent-props": [
+            "error",
+            2
+        ],
+        "curly": [
+            2,
+            "multi-line"
+        ],
+        "keyword-spacing": [
+            "error",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "multiline-ternary": [
+            "error",
+            "always-multiline"
+        ],
+        "react/jsx-closing-bracket-location": [
+            1,
+            {
+                "selfClosing": "tag-aligned",
+                "nonEmpty": "tag-aligned"
+            }
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "return"
+            },
+            {
+                "blankLine": "any",
+                "prev": "directive",
+                "next": "directive"
+            }
+        ]
+    },
+    "settings": {
+        "import/parsers": {
+            "@typescript-eslint/parser": [
+                ".ts",
+                ".tsx"
+            ]
+        },
+        "import/resolver": {
+            "typescript": {
+                "alwaysTryTypes": true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+                "project": "./tsconfig.json"
+            }
+        }
+    }
+}
